@@ -1,5 +1,6 @@
+import { ThemeProvider } from "./_components/theme-provider";
 import type { Metadata } from "next";
-import {Montserrat, Open_Sans} from "next/font/google"
+import { Montserrat, Open_Sans } from "next/font/google"
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -23,12 +24,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-Br">
-      <body
-        className={`${montserrat.variable} ${openSans.variable} w-full antialiased`}
+    <html lang="pt-Br" suppressHydrationWarning>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
       >
-        {children}
-      </body>
+        <body
+          className={`${montserrat.variable} ${openSans.variable} w-full antialiased`}
+        >
+          {children}
+        </body>
+        </ThemeProvider >
     </html>
   );
 }
