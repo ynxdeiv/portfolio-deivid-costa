@@ -22,6 +22,30 @@ const projects = [
     github: "https://github.com/ynxdeiv/PizzaPizza",
     demo: "#",
   },
+  {
+    id: 3,
+    name: "Dashboard de Vendas",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    tech: ["React", "Chart.js", "CSS"],
+    github: "#",
+    demo: "#",
+  },
+  {
+    id: 4,
+    name: "Aplicativo de Lista de Tarefas",
+    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    tech: ["Vue.js", "Firebase", "Sass"],
+    github: "#",
+    demo: "#",
+  },
+  {
+    id: 5,
+    name: "Site de Portfólio Pessoal",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+    tech: ["Gatsby", "GraphQL", "Tailwind"],
+    github: "#",
+    demo: "#",
+  },
 ];
 
 function CarouselComponent() {
@@ -115,7 +139,7 @@ function CarouselComponent() {
       <div className="w-full max-w-7xl mx-auto px-4">
         {isMounted && (
           <Slider {...settings}>
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <div key={project.id} className="h-full">
                 <div className="mx-2 h-full">
                   <div className="bg-foreground rounded-lg p-6 w-full h-full flex flex-col justify-between min-h-[450px]">
@@ -129,9 +153,9 @@ function CarouselComponent() {
                       </p>
 
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tech.map((tech, index) => (
+                        {project.tech.map((tech, techIndex) => (
                           <span
-                            key={index}
+                            key={techIndex}
                             className="px-2 py-1 bg-background text-foreground text-xs rounded"
                           >
                             {tech}
