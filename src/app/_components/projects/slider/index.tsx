@@ -40,12 +40,18 @@ function CarouselComponent() {
     arrows: true,
     variableWidth: false,
     centerPadding: '0px',
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           centerPadding: '0px',
+          autoplay: true,
+          autoplaySpeed: 3000,
         },
       },
       {
@@ -59,6 +65,8 @@ function CarouselComponent() {
           centerMode: false,
           centerPadding: '0px',
           adaptiveHeight: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
         },
       },
     ],
