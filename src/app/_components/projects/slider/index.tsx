@@ -39,76 +39,124 @@ function CarouselComponent() {
     slidesToScroll: 1,
     arrows: true,
     variableWidth: false,
+    centerPadding: '0px',
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          centerPadding: '0px',
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
           dots: true,
           arrows: false,
           variableWidth: false,
+          centerMode: false,
+          centerPadding: '0px',
+          adaptiveHeight: false,
         },
       },
     ],
   };
 
   return (
-    <div className="w-full px-4">
-      {isMounted && (
-        <Slider {...settings}>
-          {projects.map((project) => (
-            <div key={project.id}>
-              <div className="mx-2">
-                <div className="bg-foreground rounded-lg p-6 w-full min-h-[400px]">
-                  <h3 className="text-lg font-semibold mb-2 text-background">
-                    {project.name}
-                  </h3>
+    <>
+      <style jsx global>{`
+        .slick-list {
+          overflow: hidden;
+          margin: 0;
+        }
+        
+        .slick-track {
+          display: flex !important;
+          align-items: stretch;
+        }
+        
+        .slick-slide {
+          height: auto !important;
+          display: flex !important;
+        }
+        
+        .slick-slide > div {
+          width: 100% !important;
+          height: 100% !important;
+        }
+        
+        @media (max-width: 480px) {
+          .slick-slide {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+          
+          .slick-track {
+            transform: none !important;
+            width: 100% !important;
+          }
+          
+          .slick-list {
+            padding: 0 !important;
+          }
+        }
+      `}</style>
+      
+      <div className="w-full max-w-7xl mx-auto px-4">
+        {isMounted && (
+          <Slider {...settings}>
+            {projects.map((project) => (
+              <div key={project.id} className="h-full">
+                <div className="mx-2 h-full">
+                  <div className="bg-foreground rounded-lg p-6 w-full h-full flex flex-col justify-between min-h-[450px]">
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2 text-background">
+                        {project.name}
+                      </h3>
 
-                  <p className="text-background text-sm mb-4">
-                    {project.description}
-                  </p>
+                      <p className="text-background text-sm mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 bg-background text-foreground text-xs rounded"
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tech.map((tech, index) => (
+                          <span
+                            key={index}
+                            className="px-2 py-1 bg-background text-foreground text-xs rounded"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2 mt-auto">
+                      <a
+                        href={project.github}
+                        className="flex items-center gap-1 px-3 py-2 bg-background text-foreground text-sm rounded transition-all duration-300 border hover:bg-foreground hover:text-background"
                       >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                        <Github className="w-4 h-4" />
+                        GitHub
+                      </a>
 
-                  <div className="flex gap-2">
-                    <a
-                      href={project.github}
-                      className="flex items-center gap-1 px-3 py-2 bg-background text-foreground text-sm rounded transition-all duration-300 border hover:bg-foreground hover:text-background"
-                    >
-                      <Github className="w-4 h-4" />
-                      GitHub
-                    </a>
-
-                    <a
-                      href={project.demo}
-                      className="flex items-center gap-1 px-3 py-2 bg-background text-foreground text-sm rounded transition-all duration-300 border hover:bg-foreground hover:text-background"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Demo
-                    </a>
+                      <a
+                        href={project.demo}
+                        className="flex items-center gap-1 px-3 py-2 bg-background text-foreground text-sm rounded transition-all duration-300 border hover:bg-foreground hover:text-background"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Demo
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
-      )}
-    </div>
+            ))}
+          </Slider>
+        )}
+      </div>
+    </>
   );
 }
 
