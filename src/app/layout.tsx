@@ -14,13 +14,13 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Deivid Costa - Desenvolvedor FullStack",
+  title: "Deivid Costa - Desenvolvedor Node",
   description: "Portfólio Pessoal",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: Readonly<{ 
   children: React.ReactNode;
 }>) {
   return (

@@ -20,7 +20,7 @@ export default function Header() {
           <h1 className="text-xl md:text-2xl font-bold tracking-wide">
             Deivid Costa
           </h1>
-          <p className="text-xs md:text-sm">Desenvolvedor FullStack</p>
+          <p className="text-xs md:text-sm">Desenvolvedor Node</p>
         </div>
 
 

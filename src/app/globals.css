@@ -5,12 +5,20 @@
   --foreground: #171717; 
 }
 
-
 .dark {
   --background: #171717; 
   --foreground: #ffffff; 
 }
 
+.slick-prev:before,
+.slick-next:before {
+  color: var(--foreground) !important;
+}
+
+.dark .slick-prev:before,
+.dark .slick-next:before {
+  color: var(--foreground) !important;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -23,6 +31,17 @@ body {
   color: var(--foreground);
   font-family: MontSerrat, OpenSans;
 }
+
+.slick-slide {
+  display: flex !important;
+}
+
+.slick-slide > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
 
 button {
   cursor: pointer;

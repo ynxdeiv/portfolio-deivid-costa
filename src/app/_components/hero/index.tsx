@@ -12,13 +12,18 @@ export default function Hero() {
                     <nav>
                         <ul className="flex flex-row gap-6 text-sm font-semibold /70">
                             <li>
-                                <a href="https://www.linkedin.com/in/deivcst/" className="hover:text-primary transition-colors duration-200">
+                                <a href="https://www.linkedin.com/in/deivcst/">
                                     LinkedIn
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/ynxdeiv" className="hover:text-primary transition-colors duration-200">
+                                <a href="https://github.com/ynxdeiv">
                                     GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://wa.me/5571987866101">
+                                    Whastapp
                                 </a>
                             </li>
                         </ul>
