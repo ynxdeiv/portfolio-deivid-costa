@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "embla-carousel-autoplay": "^8.6.0",
@@ -19,6 +20,12 @@
     "react-slick": "^0.31.0",
     "slick-carousel": "^1.8.1"
   },
+  "lint-staged": {
+  "*.{js,ts,jsx,tsx}": [
+    "eslint --fix",
+    "prettier --write"
+  ]
+},
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
@@ -27,6 +34,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.1.5",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "typescript": "^5"
