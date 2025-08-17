@@ -67,24 +67,18 @@ function CarouselComponent() {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
-    variableWidth: false,
-    centerPadding: "0px",
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     pauseOnFocus: true,
-    swipe: true,
-    touchMove: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          centerPadding: "0px",
+          slidesToScroll: 1,
           autoplay: true,
-          autoplaySpeed: 3000,
-          swipe: true,
-          touchMove: true
+          autoplaySpeed: 3000
         }
       },
       {
@@ -94,16 +88,14 @@ function CarouselComponent() {
           slidesToScroll: 1,
           dots: true,
           arrows: false,
-          variableWidth: false,
-          centerMode: false,
-          centerPadding: "0px",
-          adaptiveHeight: false,
+          infinite: true,
           autoplay: true,
           autoplaySpeed: 4000,
           swipe: true,
           touchMove: true,
-          touchThreshold: 5,
-          edgeFriction: 0.15
+          centerMode: false,
+          variableWidth: false,
+          adaptiveHeight: false
         }
       }
     ]
@@ -114,22 +106,20 @@ function CarouselComponent() {
       <style jsx global>{`
         .slick-list {
           overflow: hidden;
-          margin: 0;
         }
 
         .slick-track {
           display: flex !important;
-          align-items: stretch;
         }
 
         .slick-slide {
-          height: auto !important;
+          height: inherit !important;
           display: flex !important;
         }
 
         .slick-slide > div {
-          width: 100% !important;
-          height: 100% !important;
+          width: 100%;
+          height: 100%;
         }
 
         .slick-dots {
@@ -139,6 +129,7 @@ function CarouselComponent() {
         .slick-dots li button:before {
           font-size: 12px;
           opacity: 0.5;
+          color: currentColor;
         }
 
         .slick-dots li.slick-active button:before {
@@ -146,20 +137,6 @@ function CarouselComponent() {
         }
 
         @media (max-width: 480px) {
-          .slick-slide {
-            width: 100% !important;
-            max-width: 100% !important;
-          }
-
-          .slick-track {
-            width: auto !important;
-          }
-
-          .slick-list {
-            padding: 0 !important;
-            touch-action: pan-y pinch-zoom;
-          }
-
           .slick-dots {
             bottom: -40px;
           }
@@ -171,14 +148,38 @@ function CarouselComponent() {
           .slick-dots li button:before {
             font-size: 10px;
           }
+
+          .slick-slide {
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 100% !important;
+          }
+
+          .slick-slide > div {
+            width: 100% !important;
+            box-sizing: border-box !important;
+          }
+
+          .slick-list {
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 100% !important;
+          }
+
+          .slick-track {
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 100% !important;
+            display: flex !important;
+          }
         }
       `}</style>
 
       <div className="mx-auto w-full max-w-7xl px-4 pb-16">
         {isMounted && (
           <Slider {...settings}>
-            {projects.map((project, index) => (
-              <div key={project.id} className="h-full">
+            {projects.map((project) => (
+              <div key={project.id} className="w-full">
                 <div className="mx-2 h-full">
                   <div className="bg-foreground flex h-full min-h-[450px] w-full flex-col justify-between rounded-lg p-6">
                     <div>
