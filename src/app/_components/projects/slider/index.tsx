@@ -36,19 +36,22 @@ function CarouselComponent() {
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          arrows: false,
+          centerMode: false,
+
         },
       },
     ],
   };
 
   return (
-<div className="w-full px-4">
+<div className="w-full overflow-x-hidden px-0 sm:px-4">
       <Slider {...settings}>
         {projects.map((project) => (
-          <div key={project.id} className="px-2">
+<div key={project.id} className="px-0 sm:px-2">
             <div className="bg-foreground rounded-lg p-6 w-full">
               <h3 className="text-lg font-semibold mb-2 text-background">
                 {project.name}
