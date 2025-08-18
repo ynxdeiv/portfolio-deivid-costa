@@ -22,7 +22,7 @@ const projects = [
       "Este projeto é uma aplicação web de pizzaria. Habilidade em front-end e integração de dados, gerenciando o menu de forma dinâmica através de um CMS headless.",
     tech: ["Next.js", "Tailwind", "Typescript", "React Hook", "Prismic CMS"],
     github: "https://github.com/ynxdeiv/PizzaPizza",
-    demo: "deivpizzapizza.vercel.app"
+    demo: "https://deivpizzapizza.vercel.app"
   },
   {
     id: 3,
