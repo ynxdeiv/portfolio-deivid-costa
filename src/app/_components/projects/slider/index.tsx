@@ -22,7 +22,7 @@ const projects = [
       "Este projeto é uma aplicação web de pizzaria. Habilidade em front-end e integração de dados, gerenciando o menu de forma dinâmica através de um CMS headless.",
     tech: ["Next.js", "Tailwind", "Typescript", "React Hook", "Prismic CMS"],
     github: "https://github.com/ynxdeiv/PizzaPizza",
-    demo: "#"
+    demo: "deivpizzapizza.vercel.app"
   },
   {
     id: 3,
@@ -46,10 +46,10 @@ const projects = [
     id: 5,
     name: "Site de Portfólio Pessoal",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    tech: ["Gatsby", "GraphQL", "Tailwind"],
-    github: "#",
-    demo: "#"
+      "Meu portfólio digital minimalista, criado para destacar meus projetos, habilidades e trajetória como desenvolvedor.",
+    tech: ["Next.js", "Tailwind", "Typescript"],
+    github: "https://github.com/ynxdeiv/portfolio-deivid-costa",
+    demo: "https://deividts.vercel.app/"
   }
 ];
 
