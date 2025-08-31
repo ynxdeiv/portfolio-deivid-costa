@@ -26,12 +26,12 @@ const projects = [
   },
   {
     id: 3,
-    name: "Dashboard de Vendas",
+    name: "Github Explorer",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    tech: ["React", "Chart.js", "CSS"],
-    github: "#",
-    demo: "#"
+      "Aplicação web para buscar repositórios no GitHub e visualizar issues abertas, além de detalhes sobre o dono do repositório.",
+    tech: ["React", "JavaScript", "Tailwind"],
+    github: "https://github.com/ynxdeiv/repos",
+    demo: "https://hubexplorer.vercel.app"
   },
   {
     id: 4,
